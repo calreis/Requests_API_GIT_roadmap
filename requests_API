@@ -1,0 +1,14 @@
+# To use this function it is necessary to import the requests and pandas libraries
+import requests, pandas as pd
+
+def requests_api():
+   user = input('Enter user name! ')
+   url = f"https://api.github.com/users/{user}/events"
+   response = requests.get(url)
+   dados = response.json()
+   df = pd.DataFrame(dados)
+   return df
+
+api_request = requests_api()
+api_request
+   
